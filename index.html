@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFOSIDERTEC - Soluções em Tecnologia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== DARK THEME ===== */
+        [data-theme="dark"] {
+            --bg-primary: #050505;
+            --bg-secondary: #0a0a0a;
+            --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #0f1720 50%, #0a0a0a 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-bg-hover: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(26, 156, 184, 0.3);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --text-faint: rgba(255, 255, 255, 0.4);
+            --grid-color: rgba(26, 156, 184, 0.03);
+            --glow-1: rgba(26, 156, 184, 0.15);
+            --glow-2: rgba(43, 197, 224, 0.1);
+            --navbar-bg: rgba(10, 10, 10, 0.8);
+            --navbar-scroll: rgba(5, 5, 5, 0.95);
+            --hero-radial: radial-gradient(ellipse at center, transparent 0%, #050505 70%);
+            --input-bg: rgba(255, 255, 255, 0.03);
+            --input-focus: rgba(255, 255, 255, 0.05);
+            --input-placeholder: rgba(255, 255, 255, 0.4);
+            --contact-item-bg: rgba(255, 255, 255, 0.02);
+            --contact-item-border: rgba(255, 255, 255, 0.05);
+            --img-overlay: linear-gradient(135deg, rgba(26,156,184,0.2) 0%, transparent 50%);
+            --img-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            --scrollbar-track: #050505;
+            --logo-filter: drop-shadow(0 10px 30px rgba(26, 156, 184, 0.4));
+            --logo-nav-filter: drop-shadow(0 0 10px rgba(26, 156, 184, 0.3));
+            --section-title-grad: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.8) 100%);
+            --social-bg: rgba(255, 255, 255, 0.03);
+            --toggle-bg: rgba(255, 255, 255, 0.1);
+            --toggle-color: rgba(255, 255, 255, 0.7);
+            --footer-bg: #0a0a0a;
+            --detail-glow: radial-gradient(circle, rgba(26, 156, 184, 0.1) 0%, transparent 70%);
+            --section-subtitle-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===== LIGHT THEME ===== */
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #f4f6f9 0%, #e9edf3 50%, #f4f6f9 100%);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-bg-hover: rgba(255, 255, 255, 1);
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(26, 156, 184, 0.4);
+            --text-primary: #1a1a2e;
+            --text-secondary: rgba(26, 26, 46, 0.75);
+            --text-muted: rgba(26, 26, 46, 0.6);
+            --text-faint: rgba(26, 26, 46, 0.4);
+            --grid-color: rgba(26, 156, 184, 0.06);
+            --glow-1: rgba(26, 156, 184, 0.08);
+            --glow-2: rgba(43, 197, 224, 0.05);
+            --navbar-bg: rgba(255, 255, 255, 0.85);
+            --navbar-scroll: rgba(255, 255, 255, 0.95);
+            --hero-radial: radial-gradient(ellipse at center, transparent 0%, #f4f6f9 70%);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-focus: rgba(0, 0, 0, 0.05);
+            --input-placeholder: rgba(26, 26, 46, 0.4);
+            --contact-item-bg: rgba(0, 0, 0, 0.015);
+            --contact-item-border: rgba(0, 0, 0, 0.06);
+            --img-overlay: linear-gradient(135deg, rgba(26,156,184,0.08) 0%, transparent 50%);
+            --img-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            --scrollbar-track: #dde1e6;
+            --logo-filter: none;
+            --logo-nav-filter: none;
+            --section-title-grad: linear-gradient(135deg, #1a1a2e 0%, rgba(26,26,46,0.85) 100%);
+            --social-bg: rgba(0, 0, 0, 0.04);
+            --toggle-bg: rgba(0, 0, 0, 0.08);
+            --toggle-color: rgba(26, 26, 46, 0.7);
+            --footer-bg: #1a1a2e;
+            --detail-glow: radial-gradient(circle, rgba(26, 156, 184, 0.06) 0%, transparent 70%);
+            --section-subtitle-color: rgba(26, 26, 46, 0.6);
+        }
+
+        :root {
+            --primary: #1a9cb8;
+            --primary-light: #2bc5e0;
+            --primary-dark: #138496;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        /* Background Effects */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+            transition: background 0.4s ease;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--glow-1) 0%, transparent 70%);
+            top: -300px; right: -300px;
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+            transition: background 0.4s ease;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--glow-2) 0%, transparent 70%);
+            bottom: -200px; left: -200px;
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse 6s ease-in-out infinite reverse;
+            transition: background 0.4s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--toggle-bg);
+            color: var(--toggle-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(26, 156, 184, 0.3);
+            transform: rotate(15deg);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--navbar-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 0;
+            transition: all 0.3s;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-primary) !important;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand img {
+            height: 45px;
+            filter: var(--logo-nav-filter);
+        }
+        .navbar-brand span { color: var(--primary); text-shadow: 0 0 20px rgba(26, 156, 184, 0.5); }
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-link:hover { color: var(--primary) !important; text-shadow: 0 0 10px rgba(26, 156, 184, 0.5); }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+            box-shadow: 0 0 10px var(--primary);
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+            background: var(--bg-gradient);
+            transition: background 0.4s ease;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--hero-radial);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-logo {
+            max-height: 120px;
+            margin-bottom: 2rem;
+            filter: var(--logo-filter);
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(26, 156, 184, 0.1);
+            border: 1px solid rgba(26, 156, 184, 0.3);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        .hero h1 span { -webkit-text-fill-color: var(--primary); }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn-tech {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease 0.6s both;
+            box-shadow: 0 0 20px rgba(26, 156, 184, 0.2);
+        }
+        .btn-tech:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 40px rgba(26, 156, 184, 0.6);
+            transform: translateY(-2px);
+        }
+        .btn-tech::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .btn-tech:hover::before { left: 100%; }
+
+        .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; animation: fadeInUp 0.8s ease 0.8s both; }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 20px rgba(26, 156, 184, 0.5);
+        }
+        .stat-item p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+
+        /* Sections */
+        section { padding: 100px 0; position: relative; transition: background 0.4s ease; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-tag {
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--section-title-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-title span { -webkit-text-fill-color: var(--primary); }
+        .section-subtitle {
+            color: var(--section-subtitle-color);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(26,156,184,0.02) 50%, var(--bg-primary) 100%);
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 40px rgba(26, 156, 184, 0.1);
+            background: var(--card-bg-hover);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 70px; height: 70px;
+            background: rgba(26, 156, 184, 0.1);
+            border: 1px solid rgba(26, 156, 184, 0.3);
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(26, 156, 184, 0.2);
+        }
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 30px rgba(26, 156, 184, 0.6);
+            transform: scale(1.1);
+        }
+        .service-card h4 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+        /* Service Detail */
+        .service-detail { position: relative; overflow: hidden; }
+        .service-detail::before {
+            content: '';
+            position: absolute;
+            width: 300px; height: 300px;
+            background: var(--detail-glow);
+            border-radius: 50%;
+            filter: blur(40px);
+            transition: background 0.4s ease;
+        }
+        .service-detail:nth-child(odd)::before { right: -150px; top: 50%; transform: translateY(-50%); }
+        .service-detail:nth-child(even)::before { left: -150px; top: 50%; transform: translateY(-50%); }
+
+        .service-img-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--img-shadow);
+            transition: all 0.4s ease;
+        }
+        .service-img-container img {
+            width: 100%; height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .service-img-container:hover img { transform: scale(1.05); }
+        .service-img-container::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: var(--img-overlay);
+            pointer-events: none;
+        }
+        .service-content h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        .service-content h3 span { color: var(--primary); }
+        .service-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li {
+            padding: 10px 0;
+            color: var(--text-secondary);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .feature-list li i { color: var(--primary); font-size: 1.2rem; }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(26,156,184,0.05) 0%, rgba(19,132,150,0.05) 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(26,156,184,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-content { position: relative; z-index: 2; }
+        .cta-section h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .cta-section p { color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+
+        /* Contact */
+        .contact-section { background: var(--bg-primary); }
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        .contact-item {
+            display: flex; align-items: flex-start; gap: 15px;
+            margin-bottom: 30px; padding: 20px;
+            background: var(--contact-item-bg);
+            border-radius: 15px;
+            border: 1px solid var(--contact-item-border);
+            transition: all 0.3s;
+        }
+        .contact-item:hover { border-color: var(--border-hover); transform: translateX(5px); }
+        .contact-icon {
+            width: 50px; height: 50px;
+            background: rgba(26, 156, 184, 0.1);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(26, 156, 184, 0.2);
+        }
+        .contact-item h5 { color: var(--text-primary); font-weight: 600; margin-bottom: 5px; }
+        .contact-item p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+        .form-control {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 15px;
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            background: var(--input-focus);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(26, 156, 184, 0.1);
+            color: var(--text-primary);
+        }
+        .form-control::placeholder { color: var(--input-placeholder); }
+        .form-label { color: var(--text-secondary); font-weight: 500; margin-bottom: 10px; }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+            transition: background 0.4s ease;
+        }
+        .footer-brand {
+            display: flex; align-items: center; gap: 12px;
+            font-weight: 800; font-size: 1.8rem;
+            color: white; margin-bottom: 20px;
+        }
+        .footer-brand img { height: 50px; filter: drop-shadow(0 0 10px rgba(26, 156, 184, 0.3)); }
+        .footer-brand span { color: var(--primary); }
+        .footer-text { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a {
+            width: 45px; height: 45px;
+            background: var(--social-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 156, 184, 0.3);
+        }
+        .footer-links h5 {
+            color: white; font-weight: 600; margin-bottom: 20px;
+            font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid var(--border);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Section Reveal / Transition Effects */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.from-left {
+            transform: translateX(-80px);
+        }
+        .reveal.from-right {
+            transform: translateX(80px);
+        }
+        .reveal.scale-up {
+            transform: scale(0.92);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Footer reveal (no translateY to avoid gap) */
+        .reveal-footer {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        .reveal-footer.visible {
+            opacity: 1;
+        }
+        .reveal-top.visible {
+            border-top: 1px solid var(--border);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-top 0.8s ease;
+        }
+
+        /* Staggered card animations */
+        .stagger-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .stagger-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section divider */
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            margin: 0 auto 1.5rem;
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(26, 156, 184, 0.4);
+        }
+
+        /* Parallax separator */
+        .separator {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scaleX(0);
+            width: 400px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .separator.visible::before {
+            transform: translate(-50%, -50%) scaleX(1);
+        }
+
+        /* Inline section divider (used between services and detail) */
+        .section-divider-top {
+            border-top: 1px solid transparent;
+        }
+        .section-divider-top.visible {
+            border-top-color: var(--border);
+        }
+
+        /* Glow line between sections */
+        .glow-line {
+            height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease, opacity 0.8s ease;
+            max-height: 0;
+            opacity: 0;
+        }
+        .glow-line.visible {
+            max-height: 1px;
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-logo { max-height: 80px; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .section-title { font-size: 2rem; }
+            .service-img-container { margin-bottom: 2rem; }
+            .navbar-brand img { height: 35px; }
+        }
+
+        /* Logo border radius */
+        .hero-logo { border-radius: 15px; overflow: hidden; }
+        .navbar-brand img { border-radius: 10px; }
+        footer .footer-brand img { border-radius: 10px; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            background: #1EBE57;
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 35px rgba(37, 211, 102, 0.7); }
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
+    </style>
+</head>
+<body>
+
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="INFOSIDERTEC" onerror="this.style.display='none'; document.getElementById('nav-text').style.display='block'">
+                <span id="nav-text" style="display: none;">INFO<span>SIDER</span>TEC</span>
+            </a>
+            <button class="navbar-toggler bg-transparent border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Servicos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Trocar tema">
+                    <i class="bi bi-sun-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <div class="hero-content">
+                        <img src="assets/img/logo.png" alt="INFOSIDERTEC" class="hero-logo" onerror="this.style.display='none'">
+                        <div class="hero-badge" style="animation-delay: 0s;">
+                            <i class="bi bi-cpu me-2"></i> INFOSIDERTEC TECNOLOGIA
+                        </div>
+                        <h1>Soluções em TI de <span>Alto Nível</span></h1>
+                        <p>Especialistas em infraestrutura de rede, segurança da informação e suporte técnico. Transformamos a tecnologia da sua empresa em vantagem competitiva.</p>
+                        <a href="#contato" class="btn btn-tech">Iniciar Projeto</a>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <h3 class="counter" data-target="35">0</h3>
+                                <p>Clientes Atendidos</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="counter" data-target="75">0</h3>
+                                <p>Projetos Entregues</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="counter" data-target="12">0</h3>
+                                <p>Anos de Experiência</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="text-center position-relative">
+                        <div style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(26,156,184,0.3) 0%, transparent 70%); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: pulse 4s infinite;"></div>
+                        <img src="assets/img/logo.png" alt="INFOSIDERTEC" style="max-height: 300px; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(26,156,184,0.3));" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div style="display: none; width: 300px; height: 300px; border: 2px solid rgba(26,156,184,0.3); border-radius: 20px; align-items: center; justify-content: center; margin: 0 auto; position: relative; z-index: 2;">
+                            <i class="bi bi-shield-check" style="font-size: 100px; color: var(--primary);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid" id="servicos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">// Nossos Serviços</span>
+                <h2 class="section-title">Soluções <span>INFOSIDERTEC</span></h2>
+                <p class="section-subtitle">Tecnologia de ponta para impulsionar o seu negócio</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-headset"></i></div>
+                        <h4>Suporte Técnico</h4>
+                        <p>Atendimento remoto e presencial especializado para resolver problemas rapidamente.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div>
+                        <h4>Gestão de TI</h4>
+                        <p>Administração completa da infraestrutura tecnológica da sua empresa.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-activity"></i></div>
+                        <h4>Monitoramento</h4>
+                        <p>Vigilância 24/7 de sistemas e redes para prevenir incidentes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-laptop"></i></div>
+                        <h4>Web Design</h4>
+                        <p>Criação de sites modernos e aplicações web responsivas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h4>Infraestrutura</h4>
+                        <p>Cabeamento estruturado e configuração de redes empresariais.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+                        <h4>Gestão de Sistemas</h4>
+                        <p>Administração de softwares corporativos e licenciamento.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+                        <h4>Segurança</h4>
+                        <p>Proteção contra ameaças cibernéticas e backup de dados.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 stagger-card">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-database"></i></div>
+                        <h4>Gestão de Dados</h4>
+                        <p>Backup em nuvem e recuperação de desastres.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-detail" id="sobre">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 reveal from-left">
+                    <div class="service-img-container">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" alt="Infraestrutura">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal from-right">
+                    <div class="service-content">
+                        <span class="section-tag">// Infraestrutura</span>
+                        <h3>Infraestrutura em <span>Rede</span></h3>
+                        <p>Criação e gerenciamento de infraestrutura de rede para garantir uma comunicação eficiente e segura entre os dispositivos. Planejamento, implementação e manutenção de redes para atender às necessidades específicas da sua empresa.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Cabeamento estruturado CAT6/CAT6A</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Configuração de switches e roteadores</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi corporativo de alta performance</li>
+                            <li><i class="bi bi-check-circle-fill"></i> VPN e conexões remotas seguras</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center flex-row-reverse mb-5">
+                <div class="col-lg-6 reveal from-right">
+                    <div class="service-img-container">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800" alt="Segurança">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal from-right">
+                    <div class="service-content">
+                        <span class="section-tag">// Segurança</span>
+                        <h3>Segurança da <span>Informação</span></h3>
+                        <p>Proteção proativa contra ameaças cibernéticas. Análise de vulnerabilidades, implementação de controles e políticas de segurança para garantir a integridade e confidencialidade dos dados.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Firewall de última geração</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Antivírus corporativo centralizado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Auditoria de segurança periódica</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Treinamento de conscientização</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal from-right">
+                    <div class="service-img-container">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800" alt="Suporte">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal from-right">
+                    <div class="service-content">
+                        <span class="section-tag">// Suporte</span>
+                        <h3>Suporte <span>Help Desk</span></h3>
+                        <p>Oferecimento de suporte técnico remoto e presencial para resolver problemas de TI e garantir a continuidade das operações. Atendimento eficiente para usuários internos e externos.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Atendimento remoto 24/7</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte presencial especializado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Gestão de chamados (ITIL)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Manutenção preventiva programada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <img src="assets/img/logo.png" alt="INFOSIDERTEC" style="max-height: 80px; margin-bottom: 2rem; filter: drop-shadow(0 0 20px rgba(26,156,184,0.5));" onerror="this.style.display='none'">
+                <h2>Entre em Contato Conosco</h2>
+                <p>Estamos sempre prontos para atender às suas necessidades. Proteja seus dados, otimize sua comunicação e fortaleça sua infraestrutura de TI com soluções personalizadas e eficientes.</p>
+                <a href="#contato" class="btn btn-tech">Falar com Especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que escolher a Infosidertec? -->
+    <section class="services-grid" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">// Nossos Diferenciais</span>
+                <h2 class="section-title">Por que escolher a <span>Infosidertec</span>?</h2>
+                <p class="section-subtitle">Ter a Infosidertec cuidando do seu TI vai permitir que você se dedique exclusivamente ao seu negócio.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mx-auto"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h4>Redução de Custos</h4>
+                        <p>Diminua as despesas com recursos trabalhistas e aumente as opções de especialidades disponíveis.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mx-auto"><i class="bi bi-shield-lock"></i></div>
+                        <h4>Segurança Garantida</h4>
+                        <p>Trabalhamos com ações e ferramentas que garantem a proteção e privacidade dos seus dados.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mx-auto"><i class="bi bi-people"></i></div>
+                        <h4>Parceria de Verdade</h4>
+                        <p>Estabelecemos uma relação de cuidado e compromisso com nossos clientes e colaboradores.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mx-auto"><i class="bi bi-trophy"></i></div>
+                        <h4>Experiência Comprovada</h4>
+                        <p>Anos de atuação no mercado, entregando soluções eficientes e personalizadas para cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">// Fale Conosco</span>
+                <h2 class="section-title">Vamos <span>Conversar</span></h2>
+                <p class="section-subtitle">Preencha seus contatos para um atendimento personalizado</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0 fade-in">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <h5>Endereço</h5>
+                                <p>São Paulo<br>Atendemos em todo estado</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>contato@infosidertec.com.br</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-clock"></i></div>
+                            <div>
+                                <h5>Horário</h5>
+                                <p>Segunda - Sexta<br>9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 fade-in">
+                    <div class="contact-card">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Nome</label>
+                                    <input type="text" class="form-control" placeholder="Seu nome completo" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Empresa</label>
+                                    <input type="text" class="form-control" placeholder="Nome da empresa">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="seu@email.com" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" placeholder="(11) 99999-9999">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensagem</label>
+                                <textarea class="form-control" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-tech w-100">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="reveal-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <img src="assets/img/logo.png" alt="INFOSIDERTEC" onerror="this.style.display='none'; document.getElementById('footer-text-backup').style.display='block'">
+                        <span id="footer-text-backup" style="display: none;">INFO<span>SIDER</span>TEC</span>
+                    </div>
+                    <p class="footer-text">Soluções em tecnologia da informação para empresas que buscam excelência, segurança e inovação no ambiente digital.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Links</h5>
+                        <ul>
+                            <li><a href="#home">Início</a></li>
+                            <li><a href="#servicos">Serviços</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Serviços</h5>
+                        <ul>
+                            <li><a href="#">Infraestrutura</a></li>
+                            <li><a href="#">Segurança</a></li>
+                            <li><a href="#">Cloud</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Contato</h5>
+                        <ul>
+                            <li><a href="#">contato@infosidertec.com.br</a></li>
+                            <li><a href="#">São Paulo, SP</a></li>
+                            <li><a href="#">Seg - Sex: 9h às 18h</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 INFOSIDERTEC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ===== THEME TOGGLE =====
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeIcon = themeToggle.querySelector('i');
+
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('infosider-theme', theme);
+            themeIcon.className = theme === 'light' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+        }
+
+        // Restore saved theme or default to dark
+        const saved = localStorage.getItem('infosider-theme') || 'dark';
+        setTheme(saved);
+
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.style.background = window.scrollY > 50
+                ? 'var(--navbar-scroll)'
+                : 'var(--navbar-bg)';
+        });
+
+        // Advanced scroll reveal system
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Stagger cards within the same parent
+                    const cards = entry.target.querySelectorAll('.stagger-card');
+                    const revealTarget = entry.target.classList.contains('stagger-card') ? entry.target : null;
+
+                    if (revealTarget) {
+                        setTimeout(() => revealTarget.classList.add('visible'), 100);
+                        revealObserver.unobserve(revealTarget);
+                    } else if (cards.length > 0) {
+                        // Stagger each card with delay
+                        cards.forEach((card, i) => {
+                            setTimeout(() => card.classList.add('visible'), 100 + i * 120);
+                        });
+                        revealObserver.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal, .stagger-card, .reveal-footer').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Legacy fade-in still supported
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+        const heroObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !counted) {
+                counted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const inc = target / 200;
+                    const step = () => {
+                        const count = +counter.innerText;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(step, 20);
+                        } else {
+                            counter.innerText = target + '+';
+                        }
+                    };
+                    step();
+                });
+                heroObserver.disconnect();
+            }
+        });
+        heroObserver.observe(document.querySelector('.hero'));
+
+        // Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const original = btn.innerText;
+            btn.innerText = 'Enviando...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerText = 'Mensagem Enviada!';
+                btn.style.background = 'var(--primary)';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.innerText = original;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511957458422" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+</body>
+</html>
